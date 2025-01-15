@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>594</width>
+    <height>384</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>594</width>
+    <height>384</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>594</width>
+    <height>384</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Register_and_login</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">border: 1px  solid rgba(225,255,255,40);
+border-radius: 7px;</string>
+   </property>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>-40</x>
+      <y>-50</y>
+      <width>741</width>
+      <height>741</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(43, 42, 51);</string>
+    </property>
+    <widget class="QLabel" name="Login">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>180</y>
+       <width>131</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgba(225,255,255,100);</string>
+     </property>
+     <property name="text">
+      <string>Логин:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditLogin">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>180</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgba(225,255,255,0);
+border: 0px  solid rgba(225,255,255,0);</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditPass">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>210</y>
+       <width>81</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgba(225,255,255,0);
+border: 0px  solid rgba(225,255,255,0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Password">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>210</y>
+       <width>131</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgba(225,255,255,100);</string>
+     </property>
+     <property name="text">
+      <string>Пароль:</string>
+     </property>
+    </widget>
+    <widget class="QFrame" name="register_and_login">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>240</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgba(225,255,255,0);
+border: 0px  solid rgba(225,255,255,40);
+color: light;
+</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="btn_login">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+color: white;
+background-color:rgba(255,255,255,0);
+}
+QPushButton:hover{
+background-color:rgba(255,255,255,40)
+}
+QPushButton:pressed{
+background-color:rgba(255,255,255,60)
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Вход</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../../../../../../../../../../../Program Files/games/12/res-rs.qrc">
+          <normaloff>:/icons/icon/login_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24 (1).png</normaloff>:/icons/icon/login_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24 (1).png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_register">
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+color: white;
+background-color:rgba(255,255,255,0);
+}
+QPushButton:hover{
+background-color:rgba(255,255,255,40)
+}
+QPushButton:pressed{
+background-color:rgba(255,255,255,60)
+}</string>
+        </property>
+        <property name="text">
+         <string>Регистрация</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../../../../../../../../../../../Program Files/games/12/res-rs.qrc">
+          <normaloff>:/icons/icon/key_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24 (1).png</normaloff>:/icons/icon/key_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24 (1).png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <zorder>register_and_login</zorder>
+    <zorder>Login</zorder>
+    <zorder>lineEditLogin</zorder>
+    <zorder>Password</zorder>
+    <zorder>lineEditPass</zorder>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../../../../../../../../../../../Program Files/games/12/res-rs.qrc"/>
+ </resources>
+ <connections/>
+</ui>
