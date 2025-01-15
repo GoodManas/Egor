@@ -8,6 +8,7 @@ from api.user import register, login, get_all_users, exel
 
 from ui.register_and_login import Ui_MainWindow
 from ui.ui_admin_panel import Ui_Admin
+from ui.ui_cars import Ui_Cars
 
 
 class Register_and_Login(QMainWindow):
@@ -21,20 +22,19 @@ class Register_and_Login(QMainWindow):
         self.ui.btn_register.clicked.connect(self.reg)
         self.base_lane_edit = [self.ui.lineEditLogin, self.ui.lineEditPass]
         
+        
     def auth(self):
         name = self.ui.lineEditLogin.text()
         passw = self.ui.lineEditPass.text()
-        user = login(name, passw)  
-        print(user)
-        
+    
         try:
             user = login(name, passw)  
             print(user)
             
-            position_id = user['dol']  
-        
+            position_id = int(user['dol']) 
             
-                    
+            print("position_id:", position_id)
+        
             if position_id == 1:  
                 self.open_ui_ADMIN()
             elif position_id == 2:  
@@ -60,6 +60,8 @@ class Register_and_Login(QMainWindow):
         self.base_lane_edit = [self.ui.lineEditLogin, self.ui.lineEditPass]
         
         windows.show()
+        
+        
     
     def show_users(self):
        
@@ -75,7 +77,18 @@ class Register_and_Login(QMainWindow):
         
         self.windows.tableView_2.setModel(model)
         
+    def open_ui_POKUPATEL(self):
+        windows = QMainWindow(self)  
+        self.windows = Ui_Cars()  
+        self.windows.setupUi(windows)
         
+        # self.windows.btn_Nissan.clicked.connect(self.HONDA)
+        # self.windows.buy_Honda.clicked.connect(self.NISSAN)
+        # self.windows.buy_ToyotaCamry.clicked.connect(self.TOYOTA)
+        
+        windows.show()
+        
+                
     def reg(self):
         name = self.ui.lineEditLogin.text()
         passw = self.ui.lineEditPass.text()
@@ -91,5 +104,5 @@ class Register_and_Login(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = Register_and_Login()
-    window.show()   
+    window.show()  
     sys.exit(app.exec())
