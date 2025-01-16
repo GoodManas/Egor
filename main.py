@@ -2,7 +2,7 @@ import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QDialog
 from PySide6.QtWidgets import QMessageBox
 from PySide6.QtGui import QStandardItemModel, QStandardItem
-from api.user import register, login, get_all_users, exel
+from api.user import register, login, get_all_users, exel, nissan, toyota, honda
 
 
 
@@ -82,9 +82,9 @@ class Register_and_Login(QMainWindow):
         self.windows = Ui_Cars()  
         self.windows.setupUi(windows)
         
-        # self.windows.btn_Nissan.clicked.connect(self.HONDA)
-        # self.windows.buy_Honda.clicked.connect(self.NISSAN)
-        # self.windows.buy_ToyotaCamry.clicked.connect(self.TOYOTA)
+        self.windows.btn_Nissan.clicked.connect(self.NISSAN)
+        self.windows.buy_Honda.clicked.connect(self.HONDA)
+        self.windows.buy_ToyotaCamry.clicked.connect(self.TOYOTA)
         
         windows.show()
         
@@ -100,6 +100,20 @@ class Register_and_Login(QMainWindow):
         
     def end(self):
         self.close()
+    
+    def NISSAN (self):
+        name = self.ui.lineEditLogin.text()
+        nissan(name)
+    
+    def TOYOTA (self):
+        name = self.ui.lineEditLogin.text()
+        toyota(name)
+    
+    def HONDA (self):
+        name = self.ui.lineEditLogin.text()
+        honda(name)
+        
+
         
 if __name__ == "__main__":
     app = QApplication(sys.argv)

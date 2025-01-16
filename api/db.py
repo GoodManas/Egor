@@ -49,9 +49,13 @@ CREATE TABLE "users" (
 	db.execute('''
    	CREATE TABLE "orders" (
 	"id_orders"	INTEGER,
-	"order"	TEXT NOT NULL,
-	PRIMARY KEY("id_orders" AUTOINCREMENT)
-);      
+	"order"	TEXT,
+	"id_cars"	INTEGER,
+	"id_users"	INTEGER,
+	PRIMARY KEY("id_orders" AUTOINCREMENT),
+	FOREIGN KEY("id_cars") REFERENCES "Cars"("id_car"),
+	FOREIGN KEY("id_users") REFERENCES "users"("id_users")
+);
 ''')
 	db.execute('''
 CREATE TABLE Sales (

@@ -53,16 +53,57 @@ def exel():
     finally:
         conn.close()
 
-# def NISSAN(login):
-#     value = db.execute(f'''
-# 		SELECT * FROM users 
-# 		WHERE login='{login}'; 
-# 	''').fetchall()
-#     if value:
-#         raise Exception("User with this login already exists")
+def nissan(login):
+    user_value = db.execute(f'''
+        SELECT id_users FROM users 
+        WHERE login = ?; 
+    ''', (login,)).fetchone()
     
-#     db.execute(f"INSERT INTO users (orders) VALUES ('{login}')")
-#     db.commit()
+    if user_value is None:
+        raise Exception("User with this login does not exist")
+    
+    id_user = user_value[0]  
+
+    
+    db.execute(f'''
+        INSERT INTO orders (id_users, id_cars) VALUES (?, ?);
+    ''', (id_user, 3))
+    print('buy car')
+    
+def toyota(login):
+    user_value = db.execute(f'''
+        SELECT id_users FROM users 
+        WHERE login = ?; 
+    ''', (login,)).fetchone()
+    
+    if user_value is None:
+        raise Exception("User with this login does not exist")
+    
+    id_user = user_value[0]  
+
+    
+    db.execute(f'''
+        INSERT INTO orders (id_users, id_cars) VALUES (?, ?);
+    ''', (id_user, 1))
+    print('buy car')
+
+def honda(login):
+    user_value = db.execute(f'''
+        SELECT id_users FROM users 
+        WHERE login = ?; 
+    ''', (login,)).fetchone()
+    
+    if user_value is None:
+        raise Exception("User with this login does not exist")
+    
+    id_user = user_value[0]  
+
+    
+    db.execute(f'''
+        INSERT INTO orders (id_users, id_cars) VALUES (?, ?);
+    ''', (id_user, 2))
+    print('buy car')
+    db.commit()
             
 
 
