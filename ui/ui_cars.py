@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QLabel, QMainWindow, QPushButton,
     QSizePolicy, QWidget)
-import res_rc
+import res_rc as res_rc
 
 class Ui_Cars(object):
     def setupUi(self, MainWindow):
