@@ -4,7 +4,7 @@ from PySide6.QtWidgets import QMessageBox
 from PySide6.QtGui import QStandardItemModel, QStandardItem
 from PySide6.QtWidgets import QFileDialog
 from PySide6.QtGui import QPixmap
-from api.user import register, login, get_all_car, exel, nissan, toyota, honda, ADD_car, get_all_users, SAVE
+from api.user import register, login, get_all_car, exel, ADD_car, get_all_users, SAVE
 
 
 
@@ -169,18 +169,6 @@ class Register_and_Login(QMainWindow):
         
     def end(self):
         self.close()
-    
-    def NISSAN (self):
-        name = self.ui.lineEditLogin.text()
-        nissan(name)
-    
-    def TOYOTA (self):
-        name = self.ui.lineEditLogin.text()
-        toyota(name)
-    
-    def HONDA (self):
-        name = self.ui.lineEditLogin.text()
-        honda(name)
     
     def save(self):
         name = self.register.lineEditLogin.text()
