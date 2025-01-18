@@ -11,9 +11,9 @@ CREATE TABLE "users" (
 	"login"	TEXT NOT NULL UNIQUE,
 	"password"	TEXT NOT NULL,
 	"dol" TEXT,
-	"orders" INTEGER, 
+	"Gmail" TEXT,
+	"Number" INTEGER,
 	PRIMARY KEY("id_users"),
-	FOREIGN KEY("orders") REFERENCES "orders"("id_orders")
 	FOREIGN KEY("dol") REFERENCES "dol"("id_dol")
 ); 
 ''')  
@@ -31,18 +31,15 @@ CREATE TABLE "users" (
     Model VARCHAR(50) NOT NULL,
     Year INTEGER NOT NULL,
     Price DECIMAL(10, 2) NOT NULL,
-    Mileage INTEGER,
-    Color VARCHAR(30),
-    Engine VARCHAR(50),
-    Transmission VARCHAR(20),
+	image_path TEXT,
     Stock INT DEFAULT 0, -- Количество доступных автомобилей
     PRIMARY KEY ("id_car" AUTOINCREMENT)
 );      
 ''')
 	Cars = [
-    ('Toyota', 'Camry', 2020, 24000.00, 15000, 'Black'),
-    ('Honda', 'Accord', 2019, 22000.00, 20000, 'White'),
-    ('Nissan', 'Altima', 2021, 26000.00, 5000, 'Blue')
+    ('Toyota', 'Camry', 2020, 24000.00),
+    ('Honda', 'Accord', 2019, 22000.00),
+    ('Nissan', 'Altima', 2021, 26000.00)
 ]
 
  
@@ -57,21 +54,10 @@ CREATE TABLE "users" (
 	FOREIGN KEY("id_users") REFERENCES "users"("id_users")
 );
 ''')
-	db.execute('''
-CREATE TABLE Sales (
-    id_sales INTEGER,
-    id_car INT NOT NULL,
-    id_users INT NOT NULL,
-    SaleDate DATETIME DEFAULT CURRENT_TIMESTAMP,
-    SalePrice DECIMAL(10, 2) NOT NULL,
-    FOREIGN KEY (id_car) REFERENCES Cars(id_car),
-    FOREIGN KEY (id_users) REFERENCES users(id_users),
-    PRIMARY KEY ("id_sales" AUTOINCREMENT)
-);
-''')
+
 	cursor.executemany('''
-INSERT INTO Cars (Make, Model, Year, Price, Mileage, Color) 
-VALUES (?, ?, ?, ?, ?, ?);
+INSERT INTO Cars (Make, Model, Year, Price) 
+VALUES (?, ?, ?, ?);
 ''', Cars)            
 
 db.commit()

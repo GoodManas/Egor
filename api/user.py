@@ -40,6 +40,10 @@ def get_all_users():
     value = db.execute('SELECT * FROM users;').fetchall()
     return value
 
+def get_all_car():
+    value = db.execute('SELECT * FROM Cars;').fetchall()
+    return value
+
 
 
 def exel():
@@ -104,9 +108,24 @@ def honda(login):
     ''', (id_user, 2))
     print('buy car')
     db.commit()
-            
+    
+    
+    
+    
+def ADD_car(make, model, Year, Price, image_path):
+        
+    db.execute(f'''
+        INSERT INTO Cars (Make, Model, Year, Price, image_path ) VALUES (?, ?, ?, ?, ?)
+    ''', (make, model, Year, Price, image_path))
+    print('successfully add_car')
+    db.commit()
 
-
+def SAVE(name, passw, Gmail, Number):
+    db.execute(f'''
+        INSERT INTO users (login, password, Gmail, Number ) VALUES (?, ?, ?, ?)
+    ''', (name, passw, Gmail, Number))
+    print('successfully user')
+    db.commit()
 
 
 if __name__ == "__main__":

@@ -15,15 +15,17 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QMainWindow, QPushButton,
-    QSizePolicy, QWidget)
-import res_rc as res_rc
+from PySide6.QtWidgets import (QApplication, QHeaderView, QLabel, QLineEdit,
+    QMainWindow, QPushButton, QSizePolicy, QTableView,
+    QWidget)
+import res_rc
+
 
 class Ui_Cars(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(800, 640)
+        MainWindow.resize(802, 640)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"border: 1px  solid rgba(225,255,255,40);\n"
@@ -36,10 +38,6 @@ class Ui_Cars(object):
         self.label_2.setObjectName(u"label_2")
         self.label_2.setGeometry(QRect(490, 80, 151, 16))
         self.label_2.setStyleSheet(u"color: white;")
-        self.label_3 = QLabel(self.widget)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(210, 120, 101, 41))
-        self.label_3.setStyleSheet(u"color: white;")
         self.btn_end = QPushButton(self.widget)
         self.btn_end.setObjectName(u"btn_end")
         self.btn_end.setGeometry(QRect(870, 670, 97, 23))
@@ -55,11 +53,56 @@ class Ui_Cars(object):
 "background-color:rgba(255,255,255,60)\n"
 "}")
         self.btn_end.setIconSize(QSize(24, 24))
-        self.buy_ToyotaCamry = QPushButton(self.widget)
-        self.buy_ToyotaCamry.setObjectName(u"buy_ToyotaCamry")
-        self.buy_ToyotaCamry.setGeometry(QRect(200, 310, 51, 31))
-        self.buy_ToyotaCamry.setMaximumSize(QSize(400, 60))
-        self.buy_ToyotaCamry.setStyleSheet(u"QPushButton{\n"
+        self.tableView_2 = QTableView(self.widget)
+        self.tableView_2.setObjectName(u"tableView_2")
+        self.tableView_2.setGeometry(QRect(190, 170, 781, 321))
+        self.tableView_2.setStyleSheet(u"QTableView{\n"
+"background-color: rgba(43, 42, 51, 30);\n"
+"border:1px solid rgba(255, 255, 255, 100);\n"
+"border-botton-right-radius: 7px;\n"
+"border-botton-left-radius: 7px;\n"
+"}\n"
+"QTableView::section{\n"
+"background-color:rgb(196, 196, 199,40);\n"
+"color: white;\n"
+"border:none;\n"
+"height:50px;\n"
+"font-size:14px;\n"
+"}\n"
+"QTableView::item{\n"
+"border-style:none;\n"
+"border-botton:rgba(43, 42, 51, 40);\n"
+"}\n"
+"\n"
+"QTableView::item::selected{\n"
+"border:none;\n"
+"color:rgba(43, 42, 51);\n"
+"background-color: rgba(43, 42, 51, 50);\n"
+"}\n"
+"\n"
+"")
+        self.btn_exel = QPushButton(self.widget)
+        self.btn_exel.setObjectName(u"btn_exel")
+        self.btn_exel.setEnabled(True)
+        self.btn_exel.setGeometry(QRect(190, 120, 100, 41))
+        self.btn_exel.setMaximumSize(QSize(100, 60))
+        self.btn_exel.setStyleSheet(u"QPushButton{\n"
+"color: white;\n"
+"background-color:rgba(255,255,255,0);\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color:rgba(255,255,255,40)\n"
+"}\n"
+"QPushButton:pressed{\n"
+"background-color:rgba(255,255,255,60)\n"
+"}\n"
+"")
+        self.btn_exel.setIconSize(QSize(24, 24))
+        self.btn_end_2 = QPushButton(self.widget)
+        self.btn_end_2.setObjectName(u"btn_end_2")
+        self.btn_end_2.setGeometry(QRect(220, 560, 111, 23))
+        self.btn_end_2.setMaximumSize(QSize(400, 60))
+        self.btn_end_2.setStyleSheet(u"QPushButton{\n"
 "color: white;\n"
 "background-color:rgba(255,255,255,0);\n"
 "}\n"
@@ -69,73 +112,29 @@ class Ui_Cars(object):
 "QPushButton:pressed{\n"
 "background-color:rgba(255,255,255,60)\n"
 "}")
-        self.buy_ToyotaCamry.setIconSize(QSize(24, 24))
-        self.label_4 = QLabel(self.widget)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setGeometry(QRect(260, 310, 91, 31))
-        self.label_4.setStyleSheet(u"color: white;")
-        self.buy_Honda = QPushButton(self.widget)
-        self.buy_Honda.setObjectName(u"buy_Honda")
-        self.buy_Honda.setGeometry(QRect(500, 310, 51, 31))
-        self.buy_Honda.setMaximumSize(QSize(400, 60))
-        self.buy_Honda.setStyleSheet(u"QPushButton{\n"
-"color: white;\n"
-"background-color:rgba(255,255,255,0);\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color:rgba(255,255,255,40)\n"
-"}\n"
-"QPushButton:pressed{\n"
-"background-color:rgba(255,255,255,60)\n"
-"}")
-        self.buy_Honda.setIconSize(QSize(24, 24))
-        self.label_5 = QLabel(self.widget)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setGeometry(QRect(560, 310, 91, 31))
-        self.label_5.setStyleSheet(u"color: white;")
-        self.label_6 = QLabel(self.widget)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setGeometry(QRect(460, 180, 261, 101))
-        self.label_6.setStyleSheet(u"background-color:rgba(225,255,255,0);\n"
-"border: 0px  solid rgba(225,255,255,40);\n"
-"color: light;\n"
-"")
-        self.label_6.setPixmap(QPixmap(u":/icons/icon/car6.png"))
-        self.label_7 = QLabel(self.widget)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setGeometry(QRect(190, 190, 201, 121))
-        self.label_7.setStyleSheet(u"background-color:rgba(225,255,255,0);\n"
-"border: 0px  solid rgba(225,255,255,40);\n"
-"color: light;\n"
-"")
-        self.label_7.setPixmap(QPixmap(u":/icons/icon/camry.png"))
-        self.label_8 = QLabel(self.widget)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setGeometry(QRect(210, 400, 261, 101))
-        self.label_8.setStyleSheet(u"background-color:rgba(225,255,255,0);\n"
-"border: 0px  solid rgba(225,255,255,40);\n"
-"color: light;\n"
-"")
-        self.label_8.setPixmap(QPixmap(u":/icons/icon/NISSAN.png"))
-        self.btn_Nissan = QPushButton(self.widget)
-        self.btn_Nissan.setObjectName(u"btn_Nissan")
-        self.btn_Nissan.setGeometry(QRect(220, 510, 51, 31))
-        self.btn_Nissan.setMaximumSize(QSize(400, 60))
-        self.btn_Nissan.setStyleSheet(u"QPushButton{\n"
-"color: white;\n"
-"background-color:rgba(255,255,255,0);\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color:rgba(255,255,255,40)\n"
-"}\n"
-"QPushButton:pressed{\n"
-"background-color:rgba(255,255,255,60)\n"
-"}")
-        self.btn_Nissan.setIconSize(QSize(24, 24))
-        self.label_9 = QLabel(self.widget)
-        self.label_9.setObjectName(u"label_9")
-        self.label_9.setGeometry(QRect(280, 510, 91, 31))
-        self.label_9.setStyleSheet(u"color: white;")
+        self.btn_end_2.setIconSize(QSize(24, 24))
+        self.label_3 = QLabel(self.widget)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setGeometry(QRect(220, 510, 271, 21))
+        self.label_3.setStyleSheet(u"color: white;")
+        self.lineEditLogin = QLineEdit(self.widget)
+        self.lineEditLogin.setObjectName(u"lineEditLogin")
+        self.lineEditLogin.setGeometry(QRect(340, 560, 41, 20))
+        self.lineEditLogin.setStyleSheet(u"background-color:rgba(225,255,255,0);\n"
+"border: 0px  solid rgba(225,255,255,0);\n"
+"color:black;")
+        self.widget_2 = QWidget(self.widget)
+        self.widget_2.setObjectName(u"widget_2")
+        self.widget_2.setGeometry(QRect(340, 560, 41, 21))
+        self.widget_2.setStyleSheet(u"background-color:rgba(225,255,255,100);")
+        self.widget_2.raise_()
+        self.label_2.raise_()
+        self.btn_end.raise_()
+        self.tableView_2.raise_()
+        self.btn_exel.raise_()
+        self.btn_end_2.raise_()
+        self.label_3.raise_()
+        self.lineEditLogin.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -146,16 +145,9 @@ class Ui_Cars(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043e\u0431\u0440\u044b\u0439 \u0434\u0435\u043d\u044c \u043f\u043e\u043a\u0443\u043f\u0430\u0442\u0435\u043b\u044c", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0430\u0442\u043e\u043b\u043e\u0433 \u043c\u0430\u0448\u0438\u043d", None))
         self.btn_end.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0445\u043e\u0434", None))
-        self.buy_ToyotaCamry.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0443\u043f\u0438\u0442\u044c", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Toyota Camry", None))
-        self.buy_Honda.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0443\u043f\u0438\u0442\u044c", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Honda Accord", None))
-        self.label_6.setText("")
-        self.label_7.setText("")
-        self.label_8.setText("")
-        self.btn_Nissan.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0443\u043f\u0438\u0442\u044c", None))
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Nissan Altima", None))
+        self.btn_exel.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0430\u0442\u043e\u043b\u043e\u0433 \u043c\u0430\u0448\u0438\u043d", None))
+        self.btn_end_2.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u043c\u0430\u0448\u0438\u043d\u0443", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 ID \u043c\u0430\u0448\u0438\u043d\u044b \u043a\u043e\u0442\u043e\u0440\u0443\u044e \u0445\u043e\u0442\u0438\u0442\u0435 \u043a\u0443\u043f\u0438\u0442\u044c ", None))
     # retranslateUi
 
