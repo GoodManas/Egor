@@ -41,6 +41,7 @@ CREATE TABLE "users" (
     ('Honda', 'Accord', 2019, 22000.00),
     ('Nissan', 'Altima', 2021, 26000.00)
 ]
+	
 
  
 	db.execute('''
@@ -61,3 +62,10 @@ VALUES (?, ?, ?, ?);
 ''', Cars)            
 
 db.commit()
+
+# cursor.executemany('''
+# INSERT INTO Cars (Make, Model, Year, Price) 
+# VALUES (?, ?, ?, ?);
+# ''', Cars)            
+
+# db.commit()

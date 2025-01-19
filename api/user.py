@@ -55,62 +55,7 @@ def exel():
     except Exception as e:
         print(f"Произошла ошибка: {e}")
     finally:
-        conn.close()
-
-def nissan(login):
-    user_value = db.execute(f'''
-        SELECT id_users FROM users 
-        WHERE login = ?; 
-    ''', (login,)).fetchone()
-    
-    if user_value is None:
-        raise Exception("User with this login does not exist")
-    
-    id_user = user_value[0]  
-
-    
-    db.execute(f'''
-        INSERT INTO orders (id_users, id_cars) VALUES (?, ?);
-    ''', (id_user, 3))
-    print('buy car')
-    
-def toyota(login):
-    user_value = db.execute(f'''
-        SELECT id_users FROM users 
-        WHERE login = ?; 
-    ''', (login,)).fetchone()
-    
-    if user_value is None:
-        raise Exception("User with this login does not exist")
-    
-    id_user = user_value[0]  
-
-    
-    db.execute(f'''
-        INSERT INTO orders (id_users, id_cars) VALUES (?, ?);
-    ''', (id_user, 1))
-    print('buy car')
-
-def honda(login):
-    user_value = db.execute(f'''
-        SELECT id_users FROM users 
-        WHERE login = ?; 
-    ''', (login,)).fetchone()
-    
-    if user_value is None:
-        raise Exception("User with this login does not exist")
-    
-    id_user = user_value[0]  
-
-    
-    db.execute(f'''
-        INSERT INTO orders (id_users, id_cars) VALUES (?, ?);
-    ''', (id_user, 2))
-    print('buy car')
-    db.commit()
-    
-    
-    
+        conn.close()    
     
 def ADD_car(make, model, Year, Price, image_path):
         
