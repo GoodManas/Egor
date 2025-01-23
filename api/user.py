@@ -23,7 +23,7 @@ def login(login: str, passw: str):
     raise Exception(f'Unauthorized: User with login "{login}" not found or wrong password')
 
 
-
+    
 
 def register(login, passw):
 	value = db.execute(f'''
@@ -42,6 +42,10 @@ def get_all_users():
 
 def get_all_car():
     value = db.execute('SELECT * FROM Cars;').fetchall()
+    return value
+
+def get_orders():
+    value = db.execute('SELECT * FROM orders;').fetchall()
     return value
 
 
@@ -72,15 +76,25 @@ def SAVE(name, passw, Gmail, Number):
     print('successfully user')
     db.commit()
 
+def Create_orders(id_car, id_users):
+    
+    db.execute(f'''
+        INSERT INTO orders (id_cars, id_users) VALUES (?, ?)
+    ''', (id_car, id_users))
+    print('successfully orders')
+    db.commit()
+
+
 
 if __name__ == "__main__":
-    user_login = "admin"  
-    user_password = "admin_password"
     try:
-        user = login("admin", "admin_password")
-        print("Logged in user data:", user)  
-        user_login = user['login']
-        print("User login:", user_login)  
-        
-    except Exception as e:  
-        print(f"Error occurred: {e}")
+        user_info = login('ваш_login', 'ваш_parол')  
+        user_id = user_info['id_users']  
+        print(f'Успешный вход. ID пользователя: {user_id}')
+
+        # Пример создания заказа
+        car_id = 1  
+        Create_orders(car_id, user_id)  
+    except Exception as e:
+        print(e)  
+   

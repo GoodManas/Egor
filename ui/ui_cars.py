@@ -20,7 +20,6 @@ from PySide6.QtWidgets import (QApplication, QHeaderView, QLabel, QLineEdit,
     QWidget)
 import res_rc
 
-
 class Ui_Cars(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
@@ -57,6 +56,7 @@ class Ui_Cars(object):
         self.tableView_2.setObjectName(u"tableView_2")
         self.tableView_2.setGeometry(QRect(190, 170, 781, 321))
         self.tableView_2.setStyleSheet(u"QTableView{\n"
+"color:white;\n"
 "background-color: rgba(43, 42, 51, 30);\n"
 "border:1px solid rgba(255, 255, 255, 100);\n"
 "border-botton-right-radius: 7px;\n"
@@ -98,11 +98,11 @@ class Ui_Cars(object):
 "}\n"
 "")
         self.btn_exel.setIconSize(QSize(24, 24))
-        self.btn_end_2 = QPushButton(self.widget)
-        self.btn_end_2.setObjectName(u"btn_end_2")
-        self.btn_end_2.setGeometry(QRect(220, 560, 111, 23))
-        self.btn_end_2.setMaximumSize(QSize(400, 60))
-        self.btn_end_2.setStyleSheet(u"QPushButton{\n"
+        self.btn_select_car = QPushButton(self.widget)
+        self.btn_select_car.setObjectName(u"btn_select_car")
+        self.btn_select_car.setGeometry(QRect(220, 560, 111, 23))
+        self.btn_select_car.setMaximumSize(QSize(400, 60))
+        self.btn_select_car.setStyleSheet(u"QPushButton{\n"
 "color: white;\n"
 "background-color:rgba(255,255,255,0);\n"
 "}\n"
@@ -112,29 +112,60 @@ class Ui_Cars(object):
 "QPushButton:pressed{\n"
 "background-color:rgba(255,255,255,60)\n"
 "}")
-        self.btn_end_2.setIconSize(QSize(24, 24))
+        self.btn_select_car.setIconSize(QSize(24, 24))
         self.label_3 = QLabel(self.widget)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setGeometry(QRect(220, 510, 271, 21))
         self.label_3.setStyleSheet(u"color: white;")
-        self.lineEditLogin = QLineEdit(self.widget)
-        self.lineEditLogin.setObjectName(u"lineEditLogin")
-        self.lineEditLogin.setGeometry(QRect(340, 560, 41, 20))
-        self.lineEditLogin.setStyleSheet(u"background-color:rgba(225,255,255,0);\n"
-"border: 0px  solid rgba(225,255,255,0);\n"
-"color:black;")
         self.widget_2 = QWidget(self.widget)
         self.widget_2.setObjectName(u"widget_2")
         self.widget_2.setGeometry(QRect(340, 560, 41, 21))
         self.widget_2.setStyleSheet(u"background-color:rgba(225,255,255,100);")
+        self.lineEditID_car = QLineEdit(self.widget_2)
+        self.lineEditID_car.setObjectName(u"lineEditID_car")
+        self.lineEditID_car.setGeometry(QRect(0, 0, 41, 20))
+        self.lineEditID_car.setStyleSheet(u"background-color:rgba(225,255,255,0);\n"
+"border: 0px  solid rgba(225,255,255,0);\n"
+"color:black;")
+        self.btn_create_orders = QPushButton(self.widget)
+        self.btn_create_orders.setObjectName(u"btn_create_orders")
+        self.btn_create_orders.setGeometry(QRect(220, 590, 111, 23))
+        self.btn_create_orders.setMaximumSize(QSize(400, 60))
+        self.btn_create_orders.setStyleSheet(u"QPushButton{\n"
+"color: white;\n"
+"background-color:rgba(255,255,255,0);\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color:rgba(255,255,255,40)\n"
+"}\n"
+"QPushButton:pressed{\n"
+"background-color:rgba(255,255,255,60)\n"
+"}")
+        self.btn_create_orders.setIconSize(QSize(24, 24))
+        self.widget_3 = QWidget(self.widget)
+        self.widget_3.setObjectName(u"widget_3")
+        self.widget_3.setGeometry(QRect(340, 590, 41, 21))
+        self.widget_3.setStyleSheet(u"background-color:rgba(225,255,255,100);")
+        self.lineEditID_users = QLineEdit(self.widget_3)
+        self.lineEditID_users.setObjectName(u"lineEditID_users")
+        self.lineEditID_users.setGeometry(QRect(0, 0, 41, 20))
+        self.lineEditID_users.setStyleSheet(u"background-color:rgba(225,255,255,0);\n"
+"border: 0px  solid rgba(225,255,255,0);\n"
+"color:black;")
+        self.label_4 = QLabel(self.widget)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setGeometry(QRect(390, 590, 271, 21))
+        self.label_4.setStyleSheet(u"color: white;")
         self.widget_2.raise_()
         self.label_2.raise_()
         self.btn_end.raise_()
         self.tableView_2.raise_()
         self.btn_exel.raise_()
-        self.btn_end_2.raise_()
+        self.btn_select_car.raise_()
         self.label_3.raise_()
-        self.lineEditLogin.raise_()
+        self.btn_create_orders.raise_()
+        self.widget_3.raise_()
+        self.label_4.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -147,7 +178,9 @@ class Ui_Cars(object):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043e\u0431\u0440\u044b\u0439 \u0434\u0435\u043d\u044c \u043f\u043e\u043a\u0443\u043f\u0430\u0442\u0435\u043b\u044c", None))
         self.btn_end.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0445\u043e\u0434", None))
         self.btn_exel.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0430\u0442\u043e\u043b\u043e\u0433 \u043c\u0430\u0448\u0438\u043d", None))
-        self.btn_end_2.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u043c\u0430\u0448\u0438\u043d\u0443", None))
+        self.btn_select_car.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u043c\u0430\u0448\u0438\u043d\u0443", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 ID \u043c\u0430\u0448\u0438\u043d\u044b \u043a\u043e\u0442\u043e\u0440\u0443\u044e \u0445\u043e\u0442\u0438\u0442\u0435 \u043a\u0443\u043f\u0438\u0442\u044c ", None))
+        self.btn_create_orders.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0434\u0435\u043b\u0430\u0442\u044c \u0437\u0430\u043a\u0430\u0437", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435  \u0432\u0430\u0448 ID \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0432\u044b\u0434\u0430\u043b \u0432\u0430\u043c \u0430\u0434\u043c\u0438\u043d ", None))
     # retranslateUi
 

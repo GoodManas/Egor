@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>802</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">border: 1px  solid rgba(225,255,255,40);
+border-radius: 7px;</string>
+   </property>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>-180</x>
+      <y>-70</y>
+      <width>1471</width>
+      <height>1021</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(43, 42, 51);</string>
+    </property>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>80</y>
+       <width>151</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;</string>
+     </property>
+     <property name="text">
+      <string>Добрый день покупатель</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_end">
+     <property name="geometry">
+      <rect>
+       <x>870</x>
+       <y>670</y>
+       <width>97</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>400</width>
+       <height>60</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+color: white;
+background-color:rgba(255,255,255,0);
+}
+QPushButton:hover{
+background-color:rgba(255,255,255,40)
+}
+QPushButton:pressed{
+background-color:rgba(255,255,255,60)
+}</string>
+     </property>
+     <property name="text">
+      <string>Выход</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QTableView" name="tableView_2">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>170</y>
+       <width>781</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTableView{
+color:white;
+background-color: rgba(43, 42, 51, 30);
+border:1px solid rgba(255, 255, 255, 100);
+border-botton-right-radius: 7px;
+border-botton-left-radius: 7px;
+}
+QTableView::section{
+background-color:rgb(196, 196, 199,40);
+color: white;
+border:none;
+height:50px;
+font-size:14px;
+}
+QTableView::item{
+border-style:none;
+border-botton:rgba(43, 42, 51, 40);
+}
+
+QTableView::item::selected{
+border:none;
+color:rgba(43, 42, 51);
+background-color: rgba(43, 42, 51, 50);
+}
+
+</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_exel">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>120</y>
+       <width>100</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>100</width>
+       <height>60</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+color: white;
+background-color:rgba(255,255,255,0);
+}
+QPushButton:hover{
+background-color:rgba(255,255,255,40)
+}
+QPushButton:pressed{
+background-color:rgba(255,255,255,60)
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Католог машин</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_select_car">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>560</y>
+       <width>111</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>400</width>
+       <height>60</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+color: white;
+background-color:rgba(255,255,255,0);
+}
+QPushButton:hover{
+background-color:rgba(255,255,255,40)
+}
+QPushButton:pressed{
+background-color:rgba(255,255,255,60)
+}</string>
+     </property>
+     <property name="text">
+      <string>Выбрать машину</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>510</y>
+       <width>271</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;</string>
+     </property>
+     <property name="text">
+      <string>Выберите ID машины которую хотите купить </string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="widget_2" native="true">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>560</y>
+       <width>41</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgba(225,255,255,100);</string>
+     </property>
+     <widget class="QLineEdit" name="lineEditID_car">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>41</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(225,255,255,0);
+border: 0px  solid rgba(225,255,255,0);
+color:black;</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="btn_create_orders">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>590</y>
+       <width>111</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>400</width>
+       <height>60</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+color: white;
+background-color:rgba(255,255,255,0);
+}
+QPushButton:hover{
+background-color:rgba(255,255,255,40)
+}
+QPushButton:pressed{
+background-color:rgba(255,255,255,60)
+}</string>
+     </property>
+     <property name="text">
+      <string>Сделать заказ</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QWidget" name="widget_3" native="true">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>590</y>
+       <width>41</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgba(225,255,255,100);</string>
+     </property>
+     <widget class="QLineEdit" name="lineEditID_users">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>41</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(225,255,255,0);
+border: 0px  solid rgba(225,255,255,0);
+color:black;</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>590</y>
+       <width>271</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;</string>
+     </property>
+     <property name="text">
+      <string>Выберите  ваш ID который выдал вам админ </string>
+     </property>
+    </widget>
+    <zorder>widget_2</zorder>
+    <zorder>label_2</zorder>
+    <zorder>btn_end</zorder>
+    <zorder>tableView_2</zorder>
+    <zorder>btn_exel</zorder>
+    <zorder>btn_select_car</zorder>
+    <zorder>label_3</zorder>
+    <zorder>btn_create_orders</zorder>
+    <zorder>widget_3</zorder>
+    <zorder>label_4</zorder>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="res_rc.qrc"/>
+ </resources>
+ <connections/>
+</ui>

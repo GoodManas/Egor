@@ -61,11 +61,27 @@ INSERT INTO Cars (Make, Model, Year, Price)
 VALUES (?, ?, ?, ?);
 ''', Cars)            
 
-db.commit()
+	db.commit()
+	dol = [
+    ('1','admin'),
+    ('2','pokupatel'),
+    
+]
+	
+	cursor.executemany('''
+INSERT INTO dol (id_dol, dol) 
+VALUES (?, ?);
+''', dol)            
 
-# cursor.executemany('''
-# INSERT INTO Cars (Make, Model, Year, Price) 
-# VALUES (?, ?, ?, ?);
-# ''', Cars)            
+	db.commit()
 
-# db.commit()
+	user = [
+    ('1','12', '12', '1', 'mrg828196@gmail.com', '79058893167'),
+    ('2','123', '123', '2', 'mrg828196@gmail.com', '79058893167'),
+    
+]
+	cursor.executemany('''
+INSERT INTO users (id_users, login, password, dol, Gmail, Number) 
+VALUES (?, ?, ?, ?, ?, ?);
+''', user)   
+	db.commit()

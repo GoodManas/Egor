@@ -4,7 +4,7 @@ from PySide6.QtWidgets import QMessageBox
 from PySide6.QtGui import QStandardItemModel, QStandardItem
 from PySide6.QtWidgets import QFileDialog
 from PySide6.QtGui import QPixmap
-from api.user import register, login, get_all_car, exel, ADD_car, get_all_users, SAVE
+from api.user import register, login, get_all_car, exel, ADD_car, get_all_users, SAVE, Create_orders
 
 
 
@@ -20,6 +20,7 @@ class Register_and_Login(QMainWindow):
         super(Register_and_Login, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui_admin = Ui_Admin()
+       
         self.ui.setupUi(self)
         
         self.ui.btn_login.clicked.connect(self.auth)
@@ -32,11 +33,10 @@ class Register_and_Login(QMainWindow):
         passw = self.ui.lineEditPass.text()
     
         try:
-            user = login(name, passw)  
+            user = login(name, passw) 
             print(user)
             
-            position_id = int(user['dol']) 
-            
+            position_id = int(user['dol'])
             print("position_id:", position_id)
         
             if position_id == 1:  
@@ -48,8 +48,9 @@ class Register_and_Login(QMainWindow):
     
         except Exception as e: 
             print("Error occurred:", str(e))
-            QMessageBox.warning(self, "Ошибка", str(e))   
-    
+            QMessageBox.warning(self, "Ошибка", str(e))  
+
+
     def open_ui_ADMIN(self):
         print('открылось окно с админомм')
         
@@ -123,9 +124,8 @@ class Register_and_Login(QMainWindow):
         users = get_all_users()
         
         #модель для QTableView
-        model = QStandardItemModel(len(users), 4)  # Измените количество столбцов в соответствии с вашей таблицей
-        model.setHorizontalHeaderLabels(["id", "Login", "Password", "role" ])  # Замените на ваши реальные названия столбцов
-        
+        model = QStandardItemModel(len(users), 4)  
+        model.setHorizontalHeaderLabels(["id", "Login", "Password", "role" ])  
         for row_idx, row_data in enumerate(users):
             for col_idx, item in enumerate(row_data):
                 model.setItem(row_idx, col_idx, QStandardItem(str(item)))  
@@ -137,14 +137,15 @@ class Register_and_Login(QMainWindow):
         users = get_all_car()
         
         #модель для QTableView
-        model = QStandardItemModel(len(users), 5)  # Измените количество столбцов в соответствии с вашей таблицей
-        model.setHorizontalHeaderLabels(["id", "Make", "Model", "Year", "Price" ])  # Замените на ваши реальные названия столбцов
+        model = QStandardItemModel(len(users), 5)  
+        model.setHorizontalHeaderLabels(["id", "Make", "Model", "Year", "Price" ])
         
         for row_idx, row_data in enumerate(users):
             for col_idx, item in enumerate(row_data):
                 model.setItem(row_idx, col_idx, QStandardItem(str(item)))  
         
-        self.windows.tableView_2.setModel(model)     
+        self.windows.tableView_2.setModel(model)  
+        
         
     def open_ui_POKUPATEL(self):
         windows = QMainWindow(self)  
@@ -153,9 +154,17 @@ class Register_and_Login(QMainWindow):
         
         self.windows.btn_end.clicked.connect(self.end)
         self.windows.btn_exel.clicked.connect(self.show_car)
-        #доделать показ машины еу
+        self.windows.btn_create_orders.clicked.connect(self.create_orders)
+
         
         windows.show()
+        
+    def create_orders(self):
+        id_users = self.windows.lineEditID_users.text()
+        id_car = self.windows.lineEditID_car.text()
+
+
+        Create_orders(id_users, id_car)
         
                 
     def reg(self):
